@@ -9,19 +9,41 @@
     android:orientation="vertical"
     tools:context=".MantencionFormActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/agregar_mantencion"
-            android:textColor="@color/texto_principal"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_marginStart="-12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnVolver"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/volver"
+                android:src="@drawable/ic_volver" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="@string/agregar_mantencion"
+                android:textColor="@color/texto_principal"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilNombreMantencion"
@@ -63,4 +85,5 @@
             android:layout_marginTop="24dp"
             android:text="@string/guardar" />
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>
