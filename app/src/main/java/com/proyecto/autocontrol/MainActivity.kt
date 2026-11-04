@@ -41,9 +41,10 @@ class MainActivity : AppCompatActivity() {
         val tvVacio = findViewById<TextView>(R.id.tvVacio)
 
         adapter = AutoAdapter(
-            alTocar = {
-                // En la etapa 4 esto abrirá el detalle del auto
-                Toast.makeText(this, R.string.detalle_proximamente, Toast.LENGTH_SHORT).show()
+            alTocar = { auto ->
+                val intent = Intent(this, DetalleAutoActivity::class.java)
+                intent.putExtra(DetalleAutoActivity.EXTRA_AUTO_ID, auto.id)
+                startActivity(intent)
             },
             alMantenerPresionado = { auto -> mostrarOpciones(auto) }
         )

@@ -7,7 +7,6 @@
     <string name="editar_auto">Editar auto</string>
     <string name="sin_autos">Aún no tienes autos registrados.\nToca + para agregar uno.</string>
     <string name="auto_guardado">Auto guardado correctamente.</string>
-    <string name="detalle_proximamente">El detalle del auto estará disponible pronto.</string>
 
     <!-- Formulario de auto -->
     <string name="hint_nombre_auto">Nombre del auto (ej. Yaris)</string>
@@ -32,4 +31,16 @@
     <string name="error_km_invalido">Ingresa un kilometraje válido.</string>
     <string name="error_guardar">No se pudo guardar. Inténtalo de nuevo.</string>
     <string name="error_auto_no_encontrado">No se encontró el auto.</string>
+
+    <!-- Detalle del auto -->
+    <string name="volver">Volver</string>
+    <string name="ultimo_rendimiento">Último rendimiento</string>
+    <string name="sin_rendimiento">—</string>
+    <string name="sin_cargas_rendimiento">Registra tu primera carga para calcular el rendimiento.</string>
+    <string name="rendimiento_ultima_carga">Según la última carga registrada.</string>
+    <string name="formato_rendimiento">%.1f km/l</string>
+    <string name="cargas">Cargas</string>
+    <string name="mantenciones">Mantenciones</string>
+    <string name="seccion_proximamente">Esta sección estará disponible pronto.</string>
+
 </resources>
