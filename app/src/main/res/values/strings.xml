@@ -43,4 +43,21 @@
     <string name="mantenciones">Mantenciones</string>
     <string name="seccion_proximamente">Esta sección estará disponible pronto.</string>
 
+    <!-- Registrar carga -->
+    <string name="registrar_carga">Registrar carga</string>
+    <string name="hint_odometro">Odómetro actual</string>
+    <string name="hint_litros">Litros cargados</string>
+    <string name="hint_costo">Costo total</string>
+    <string name="sufijo_km">km</string>
+    <string name="sufijo_litros">L</string>
+    <string name="prefijo_pesos">$</string>
+    <string name="helper_ultimo_odometro">Último registro: %1$d km</string>
+    <string name="carga_guardada">Carga registrada correctamente.</string>
+    <string name="error_odometro_vacio">Ingresa el kilometraje que marca el odómetro.</string>
+    <string name="error_odometro_menor">El odómetro debe ser mayor a %1$d km (último registro).</string>
+    <string name="error_litros_vacio">Ingresa los litros cargados.</string>
+    <string name="error_litros_invalido">Ingresa una cantidad de litros válida (mayor a 0 y hasta 200).</string>
+    <string name="error_costo_vacio">Ingresa el costo de la carga.</string>
+    <string name="error_costo_invalido">Ingresa un costo válido mayor a 0.</string>
+
 </resources>

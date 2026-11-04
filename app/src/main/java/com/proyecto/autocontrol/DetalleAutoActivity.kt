@@ -17,6 +17,7 @@ import com.proyecto.autocontrol.data.Auto
 import com.proyecto.autocontrol.data.Carga
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
+import android.content.Intent
 
 class DetalleAutoActivity : AppCompatActivity() {
 
@@ -55,6 +56,12 @@ class DetalleAutoActivity : AppCompatActivity() {
         tvRendimientoDetalle = findViewById(R.id.tvRendimientoDetalle)
 
         findViewById<ImageButton>(R.id.btnVolver).setOnClickListener { finish() }
+
+        findViewById<MaterialButton>(R.id.btnRegistrarCarga).setOnClickListener {
+            val intent = Intent(this, CargaFormActivity::class.java)
+            intent.putExtra(CargaFormActivity.EXTRA_AUTO_ID, autoId)
+            startActivity(intent)
+        }
 
         findViewById<MaterialButton>(R.id.btnCargas).setOnClickListener {
             // Se conecta en la etapa 5

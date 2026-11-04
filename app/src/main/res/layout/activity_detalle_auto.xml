@@ -102,13 +102,21 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Acción principal -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegistrarCarga"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/registrar_carga" />
+
         <!-- Botones de secciones -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCargas"
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
             android:text="@string/cargas" />
 
         <com.google.android.material.button.MaterialButton
