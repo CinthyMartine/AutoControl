@@ -23,4 +23,7 @@ interface AutoDao {
 
     @Query("SELECT * FROM autos WHERE id = :id")
     suspend fun obtenerPorId(id: Long): Auto?
+
+    @Query("SELECT * FROM autos WHERE id = :id")
+    fun observarPorId(id: Long): Flow<Auto?>
 }
