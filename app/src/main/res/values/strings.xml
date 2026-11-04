@@ -38,7 +38,6 @@
     <string name="sin_rendimiento">—</string>
     <string name="sin_cargas_rendimiento">Registra tu primera carga para calcular el rendimiento.</string>
     <string name="rendimiento_ultima_carga">Según la última carga registrada.</string>
-    <string name="formato_rendimiento">%.1f km/l</string>
     <string name="cargas">Cargas</string>
     <string name="mantenciones">Mantenciones</string>
     <string name="seccion_proximamente">Esta sección estará disponible pronto.</string>
@@ -65,5 +64,31 @@
     <string name="formato_km_l">%1$s km/l</string>
     <string name="detalle_odometro_litros">Odómetro: %1$s km · %2$s L</string>
     <string name="detalle_costo">%1$s · %2$s por km</string>
+
+    <!-- Mantenciones -->
+    <string name="agregar_mantencion">Agregar mantención</string>
+    <string name="hint_nombre_mantencion">Nombre (ej. Cambio de aceite)</string>
+    <string name="hint_km_objetivo">Kilometraje en que corresponde</string>
+    <string name="helper_odometro_actual">Odómetro actual: %1$s km</string>
+    <string name="mantencion_guardada">Mantención guardada correctamente.</string>
+    <string name="sin_mantenciones">No hay mantenciones agregadas.\nToca + para agregar una.</string>
+    <string name="proxima_mantencion">Próxima mantención</string>
+    <string name="sin_mantenciones_pendientes">No hay mantenciones pendientes.</string>
+    <string name="estado_pendiente">Pendiente</string>
+    <string name="estado_proxima">Próxima</string>
+    <string name="estado_atrasada">Atrasada</string>
+    <string name="estado_completada">Completada</string>
+    <string name="faltan_km">Faltan %1$s km</string>
+    <string name="atrasada_km">Atrasada por %1$s km</string>
+    <string name="corresponde_ahora">Corresponde ahora</string>
+    <string name="corresponde_a_los_km">Corresponde a los %1$s km</string>
+    <string name="detalle_mantencion">%1$s · %2$s</string>
+    <string name="marcar_completada">Marcar como completada</string>
+    <string name="marcar_pendiente">Marcar como pendiente</string>
+    <string name="eliminar_mantencion_titulo">¿Eliminar mantención?</string>
+    <string name="eliminar_mantencion_mensaje">Se eliminará «%1$s». Esta acción no se puede deshacer.</string>
+    <string name="error_nombre_mantencion_vacio">Ingresa el nombre de la mantención.</string>
+    <string name="error_km_objetivo_vacio">Ingresa el kilometraje en que corresponde.</string>
+    <string name="error_km_objetivo_invalido">Ingresa un kilometraje válido mayor a 0.</string>
 
 </resources>
