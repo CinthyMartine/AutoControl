@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">AutoControl</string>
+
+    <!-- Mis autos -->
+    <string name="mis_autos">Mis autos</string>
+    <string name="agregar_auto">Agregar auto</string>
+    <string name="editar_auto">Editar auto</string>
+    <string name="sin_autos">Aún no tienes autos registrados.\nToca + para agregar uno.</string>
+    <string name="auto_guardado">Auto guardado correctamente.</string>
+    <string name="detalle_proximamente">El detalle del auto estará disponible pronto.</string>
+
+    <!-- Formulario de auto -->
+    <string name="hint_nombre_auto">Nombre del auto (ej. Yaris)</string>
+    <string name="hint_patente">Patente</string>
+    <string name="hint_km_inicial">Kilometraje actual</string>
+
+    <!-- Acciones -->
+    <string name="guardar">Guardar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="cancelar">Cancelar</string>
+
+    <!-- Eliminar -->
+    <string name="eliminar_auto_titulo">¿Eliminar auto?</string>
+    <string name="eliminar_auto_mensaje">Se eliminará «%1$s» junto con todas sus cargas y mantenciones. Esta acción no se puede deshacer.</string>
+
+    <!-- Errores -->
+    <string name="error_nombre_vacio">Ingresa un nombre para el auto.</string>
+    <string name="error_patente_vacia">Ingresa la patente.</string>
+    <string name="error_patente_invalida">La patente solo puede tener letras, números y guiones.</string>
+    <string name="error_km_vacio">Ingresa el kilometraje actual.</string>
+    <string name="error_km_invalido">Ingresa un kilometraje válido.</string>
+    <string name="error_guardar">No se pudo guardar. Inténtalo de nuevo.</string>
+    <string name="error_auto_no_encontrado">No se encontró el auto.</string>
 </resources>
