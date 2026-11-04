@@ -1,6 +1,8 @@
 package com.proyecto.autocontrol
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -15,9 +17,9 @@ import com.google.android.material.button.MaterialButton
 import com.proyecto.autocontrol.data.AppDatabase
 import com.proyecto.autocontrol.data.Auto
 import com.proyecto.autocontrol.data.Carga
+import com.proyecto.autocontrol.data.Mantencion
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
-import android.content.Intent
 
 class DetalleAutoActivity : AppCompatActivity() {
 
@@ -29,6 +31,8 @@ class DetalleAutoActivity : AppCompatActivity() {
     private lateinit var tvPatenteAuto: TextView
     private lateinit var tvRendimiento: TextView
     private lateinit var tvRendimientoDetalle: TextView
+    private lateinit var tvProximaNombre: TextView
+    private lateinit var tvProximaEstado: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +58,8 @@ class DetalleAutoActivity : AppCompatActivity() {
         tvPatenteAuto = findViewById(R.id.tvPatenteAuto)
         tvRendimiento = findViewById(R.id.tvRendimiento)
         tvRendimientoDetalle = findViewById(R.id.tvRendimientoDetalle)
+        tvProximaNombre = findViewById(R.id.tvProximaNombre)
+        tvProximaEstado = findViewById(R.id.tvProximaEstado)
 
         findViewById<ImageButton>(R.id.btnVolver).setOnClickListener { finish() }
 
@@ -62,37 +68,39 @@ class DetalleAutoActivity : AppCompatActivity() {
             intent.putExtra(CargaFormActivity.EXTRA_AUTO_ID, autoId)
             startActivity(intent)
         }
-
         findViewById<MaterialButton>(R.id.btnCargas).setOnClickListener {
             val intent = Intent(this, CargasActivity::class.java)
             intent.putExtra(CargasActivity.EXTRA_AUTO_ID, autoId)
             startActivity(intent)
         }
         findViewById<MaterialButton>(R.id.btnMantenciones).setOnClickListener {
-            // Se conecta en la etapa 7
-            Toast.makeText(this, R.string.seccion_proximamente, Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MantencionesActivity::class.java)
+            intent.putExtra(MantencionesActivity.EXTRA_AUTO_ID, autoId)
+            startActivity(intent)
         }
 
-        // Escucha el auto y sus cargas al mismo tiempo; se actualiza solo si cambian
+        // Escucha el auto, sus cargas y sus mantenciones; se actualiza solo si cambian
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 combine(
                     db.autoDao().observarPorId(autoId),
-                    db.cargaDao().obtenerPorAuto(autoId)
-                ) { auto, cargas -> auto to cargas }
-                    .collect { (auto, cargas) ->
+                    db.cargaDao().obtenerPorAuto(autoId),
+                    db.mantencionDao().obtenerPorAuto(autoId)
+                ) { auto, cargas, mantenciones -> Triple(auto, cargas, mantenciones) }
+                    .collect { (auto, cargas, mantenciones) ->
                         if (auto == null) {
                             // El auto ya no existe (por ejemplo, fue eliminado)
                             finish()
                         } else {
-                            mostrarAuto(auto, cargas)
+                            mostrarRendimiento(auto, cargas)
+                            mostrarProximaMantencion(auto, cargas, mantenciones)
                         }
                     }
             }
         }
     }
 
-    private fun mostrarAuto(auto: Auto, cargas: List<Carga>) {
+    private fun mostrarRendimiento(auto: Auto, cargas: List<Carga>) {
         tvNombreAuto.text = auto.nombre
         tvPatenteAuto.text = auto.patente
 
@@ -111,8 +119,25 @@ class DetalleAutoActivity : AppCompatActivity() {
         if (valor == null) {
             tvRendimiento.setText(R.string.sin_rendimiento)
         } else {
-            tvRendimiento.text = getString(R.string.formato_rendimiento, valor)
+            tvRendimiento.text = getString(R.string.formato_km_l, Formatos.unDecimal(valor))
         }
         tvRendimientoDetalle.setText(R.string.rendimiento_ultima_carga)
+    }
+
+    private fun mostrarProximaMantencion(auto: Auto, cargas: List<Carga>, mantenciones: List<Mantencion>) {
+        val proxima = Calculos.proximaMantencion(mantenciones)
+        if (proxima == null) {
+            tvProximaNombre.setText(R.string.sin_mantenciones_pendientes)
+            tvProximaEstado.visibility = View.GONE
+            return
+        }
+
+        val odometro = Calculos.odometroActual(auto.kmInicial, cargas)
+        val estado = Calculos.estadoMantencion(proxima, odometro)
+
+        tvProximaNombre.text = proxima.nombre
+        tvProximaEstado.visibility = View.VISIBLE
+        tvProximaEstado.text = MantencionAdapter.textoEstado(this, estado, proxima.kmObjetivo - odometro)
+        tvProximaEstado.setTextColor(MantencionAdapter.colorEstado(this, estado))
     }
 }
