@@ -14,6 +14,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.proyecto.autocontrol.data.AppDatabase
 import com.proyecto.autocontrol.data.Mantencion
 import kotlinx.coroutines.launch
+import android.widget.ImageButton
 
 class MantencionFormActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class MantencionFormActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_mantencion_form)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val barras = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val barras = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime())
             v.setPadding(barras.left, barras.top, barras.right, barras.bottom)
             insets
         }
@@ -67,6 +68,7 @@ class MantencionFormActivity : AppCompatActivity() {
             tilKmObjetivo.helperText = getString(R.string.helper_odometro_actual, Formatos.miles(odometro))
         }
 
+        findViewById<ImageButton>(R.id.btnVolver).setOnClickListener { finish() }
         btnGuardar.setOnClickListener { guardar() }
     }
 

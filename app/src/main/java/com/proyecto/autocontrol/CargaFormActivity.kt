@@ -14,6 +14,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.proyecto.autocontrol.data.AppDatabase
 import com.proyecto.autocontrol.data.Carga
 import kotlinx.coroutines.launch
+import android.widget.ImageButton
 
 class CargaFormActivity : AppCompatActivity() {
 
@@ -37,7 +38,7 @@ class CargaFormActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_carga_form)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val barras = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val barras = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime())
             v.setPadding(barras.left, barras.top, barras.right, barras.bottom)
             insets
         }
@@ -71,6 +72,7 @@ class CargaFormActivity : AppCompatActivity() {
             tilOdometro.helperText = getString(R.string.helper_ultimo_odometro, minimo)
         }
 
+        findViewById<ImageButton>(R.id.btnVolver).setOnClickListener { finish() }
         btnGuardarCarga.setOnClickListener { guardar() }
     }
 

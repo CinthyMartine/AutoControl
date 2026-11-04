@@ -14,6 +14,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.proyecto.autocontrol.data.AppDatabase
 import com.proyecto.autocontrol.data.Auto
 import kotlinx.coroutines.launch
+import android.widget.ImageButton
 
 class AutoFormActivity : AppCompatActivity() {
 
@@ -37,7 +38,7 @@ class AutoFormActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_auto_form)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val barras = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val barras = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime())
             v.setPadding(barras.left, barras.top, barras.right, barras.bottom)
             insets
         }
@@ -73,6 +74,7 @@ class AutoFormActivity : AppCompatActivity() {
             }
         }
 
+        findViewById<ImageButton>(R.id.btnVolver).setOnClickListener { finish() }
         btnGuardar.setOnClickListener { guardar() }
     }
 

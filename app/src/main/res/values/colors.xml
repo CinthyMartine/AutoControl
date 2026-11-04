@@ -9,4 +9,6 @@
     <color name="verde">#16A34A</color>
     <color name="naranjo">#D97706</color>
     <color name="rojo">#DC2626</color>
+    <color name="azul_claro">#DBEAFE</color>
+    <color name="azul_oscuro">#1E3A8A</color>
 </resources>
