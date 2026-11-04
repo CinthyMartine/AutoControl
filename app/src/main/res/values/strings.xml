@@ -60,4 +60,10 @@
     <string name="error_costo_vacio">Ingresa el costo de la carga.</string>
     <string name="error_costo_invalido">Ingresa un costo válido mayor a 0.</string>
 
+    <!-- Historial de cargas -->
+    <string name="sin_cargas">Este auto no tiene cargas registradas.\nToca + para registrar la primera.</string>
+    <string name="formato_km_l">%1$s km/l</string>
+    <string name="detalle_odometro_litros">Odómetro: %1$s km · %2$s L</string>
+    <string name="detalle_costo">%1$s · %2$s por km</string>
+
 </resources>

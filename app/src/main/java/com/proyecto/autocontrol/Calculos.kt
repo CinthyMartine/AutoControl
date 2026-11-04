@@ -11,4 +11,13 @@ object Calculos {
         if (km <= 0 || litros <= 0.0) return null
         return km / litros
     }
+
+    /**
+     * Costo por kilómetro recorrido.
+     * Devuelve null si no hay km recorridos.
+     */
+    fun costoPorKm(costo: Int, kmRecorridos: Int): Double? {
+        if (kmRecorridos <= 0) return null
+        return costo.toDouble() / kmRecorridos
+    }
 }

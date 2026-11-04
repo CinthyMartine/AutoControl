@@ -64,8 +64,9 @@ class DetalleAutoActivity : AppCompatActivity() {
         }
 
         findViewById<MaterialButton>(R.id.btnCargas).setOnClickListener {
-            // Se conecta en la etapa 5
-            Toast.makeText(this, R.string.seccion_proximamente, Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, CargasActivity::class.java)
+            intent.putExtra(CargasActivity.EXTRA_AUTO_ID, autoId)
+            startActivity(intent)
         }
         findViewById<MaterialButton>(R.id.btnMantenciones).setOnClickListener {
             // Se conecta en la etapa 7
