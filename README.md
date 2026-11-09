@@ -6,6 +6,11 @@ Aplicación Android para registrar las cargas de combustible, calcular el rendim
 
 Muchas personas que tienen auto olvidan a qué kilometraje les corresponde una mantención (cambio de aceite, rotación de neumáticos, revisión de frenos) y no saben cuánto rinde realmente su vehículo. Esto provoca fallas mecánicas evitables, gastos mayores y pérdida de control sobre el costo de uso del auto.
 
+### Causas identificadas
+- Las mantenciones dependen del kilometraje, un dato que el conductor no suele revisar ni anotar.
+- No existe un registro ordenado de las cargas de combustible, por lo que el rendimiento real no se conoce.
+- Calcular el rendimiento a mano requiere anotar el odómetro y los litros en cada carga, algo que casi nadie hace.
+
 ## Solución
 
 AutoControl permite llevar un registro simple de cada auto: con cada carga de combustible calcula automáticamente el rendimiento y el costo por kilómetro, y compara el odómetro con las mantenciones registradas para avisar cuáles están próximas o atrasadas.
@@ -138,4 +143,4 @@ La app se instala sin datos: todo se agrega desde la propia aplicación.
 
 Proyecto desarrollado para la asignatura **Taller de aplicaciones móviles** (AIEP), Unidad 2: Diseño de aplicaciones móviles (Android). Actividad sumativa, semana 7.
 
-Desarrollado por **Cinthya Martinez**.
+**Integrantes:** Cinthya Martínez, Gerardo Crisóstomo y Paula Andrade.
