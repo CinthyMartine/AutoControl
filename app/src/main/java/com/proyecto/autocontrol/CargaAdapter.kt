@@ -16,7 +16,9 @@ data class FilaCarga(
     val costoPorKm: Double?
 )
 
-class CargaAdapter : ListAdapter<FilaCarga, CargaAdapter.CargaViewHolder>(Diferencia) {
+class CargaAdapter(
+    private val alTocar: (Carga) -> Unit
+) : ListAdapter<FilaCarga, CargaAdapter.CargaViewHolder>(Diferencia) {
 
     class CargaViewHolder(vista: View) : RecyclerView.ViewHolder(vista) {
         val tvFecha: TextView = vista.findViewById(R.id.tvFechaCarga)
@@ -59,6 +61,8 @@ class CargaAdapter : ListAdapter<FilaCarga, CargaAdapter.CargaViewHolder>(Difere
         } else {
             Formatos.pesos(carga.costo)
         }
+
+        holder.itemView.setOnClickListener { alTocar(carga) }
     }
 
     object Diferencia : DiffUtil.ItemCallback<FilaCarga>() {
