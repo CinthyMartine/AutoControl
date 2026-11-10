@@ -24,7 +24,8 @@ AutoControl permite llevar un registro simple de cada auto: con cada carga de co
 **Cargas de combustible**
 - Registro de odómetro, litros y costo de cada carga.
 - Cálculo automático de rendimiento (km/l) y costo por kilómetro.
-- Historial de cargas ordenado de la más reciente a la más antigua.
+- Historial de cargas ordenado de la más reciente a la más antigua. 
+- Eliminar cargas con confirmación; el rendimiento se recalcula automáticamente.
 
 **Mantenciones** (valor agregado)
 - Registro de mantenciones con el kilometraje en que corresponden.
@@ -111,33 +112,34 @@ La app se instala sin datos: todo se agrega desde la propia aplicación.
 ## Pruebas realizadas
 
 | # | Prueba | Resultado |
-|---|---|-----------|
-| 1 | Abrir la app recién instalada muestra el mensaje de lista vacía | OK        |
-| 2 | Guardar auto con campos vacíos muestra errores | OK        |
-| 3 | Patente con caracteres inválidos muestra error | OK        |
-| 4 | Agregar auto válido lo muestra en la lista | OK        |
-| 5 | Volver desde el formulario no guarda datos | OK        |
-| 6 | Nombre largo se corta sin romper la tarjeta | OK        |
-| 7 | Varios autos se muestran en grilla de 2 columnas | OK        |
-| 8 | Editar auto carga y guarda los cambios | OK        |
-| 9 | Auto sin cargas muestra "—" en el rendimiento | OK        |
-| 10 | Guardar carga con campos vacíos muestra errores | OK        |
-| 11 | Odómetro menor o igual al último muestra error | OK        |
-| 12 | Litros en 0 o mayores a 200 muestran error | OK        |
-| 13 | Litros con coma decimal se aceptan | OK        |
-| 14 | Carga válida calcula el rendimiento correcto | OK        |
-| 15 | Historial ordenado con km/l y costo por km correctos | OK        |
-| 16 | Auto sin cargas muestra mensaje en el historial | OK        |
-| 17 | Mantención vacía o con km 0 muestra errores | OK        |
-| 18 | Estados y colores de mantenciones correctos | OK        |
-| 19 | Marcar mantención como completada y como pendiente | OK        |
-| 20 | El detalle muestra la próxima mantención pendiente | OK        |
-| 21 | Eliminar mantención con confirmación | OK        |
-| 22 | Eliminar auto borra también sus cargas y mantenciones | OK        |
-| 23 | Girar la pantalla no pierde datos ni cierra la app | OK        |
-| 24 | Tocar Guardar varias veces guarda una sola vez | OK        |
-| 25 | Los datos se conservan al cerrar y abrir la app | OK        |
-| 26 | Editar el km inicial no provoca cierres | OK        |
+|---|---|----|
+| 1 | Abrir la app recién instalada muestra el mensaje de lista vacía | OK |
+| 2 | Guardar auto con campos vacíos muestra errores | OK |
+| 3 | Patente con caracteres inválidos muestra error | OK |
+| 4 | Agregar auto válido lo muestra en la lista | OK |
+| 5 | Volver desde el formulario no guarda datos | OK |
+| 6 | Nombre largo se corta sin romper la tarjeta | OK |
+| 7 | Varios autos se muestran en grilla de 2 columnas | OK |
+| 8 | Editar auto carga y guarda los cambios | OK |
+| 9 | Auto sin cargas muestra "—" en el rendimiento | OK |
+| 10 | Guardar carga con campos vacíos muestra errores | OK |
+| 11 | Odómetro menor o igual al último muestra error | OK |
+| 12 | Litros en 0 o mayores a 200 muestran error | OK |
+| 13 | Litros con coma decimal se aceptan | OK |
+| 14 | Carga válida calcula el rendimiento correcto | OK |
+| 15 | Historial ordenado con km/l y costo por km correctos | OK |
+| 16 | Auto sin cargas muestra mensaje en el historial | OK |
+| 17 | Mantención vacía o con km 0 muestra errores | OK |
+| 18 | Estados y colores de mantenciones correctos | OK |
+| 19 | Marcar mantención como completada y como pendiente | OK |
+| 20 | El detalle muestra la próxima mantención pendiente | OK |
+| 21 | Eliminar mantención con confirmación | OK |
+| 22 | Eliminar auto borra también sus cargas y mantenciones | OK |
+| 23 | Girar la pantalla no pierde datos ni cierra la app | OK |
+| 24 | Tocar Guardar varias veces guarda una sola vez | OK |
+| 25 | Los datos se conservan al cerrar y abrir la app | OK |
+| 26 | Editar el km inicial no provoca cierres | OK |
+| 27 | Eliminar una carga recalcula el rendimiento y permite corregir un odómetro mal ingresado | OK |
 
 ## Contexto académico
 

@@ -90,5 +90,8 @@
     <string name="error_nombre_mantencion_vacio">Ingresa el nombre de la mantención.</string>
     <string name="error_km_objetivo_vacio">Ingresa el kilometraje en que corresponde.</string>
     <string name="error_km_objetivo_invalido">Ingresa un kilometraje válido mayor a 0.</string>
-
+    <!-- Eliminar carga -->
+    <string name="eliminar_carga_titulo">¿Eliminar carga?</string>
+    <string name="eliminar_carga_mensaje">Se eliminará la carga del %1$s con odómetro de %2$s km. El rendimiento se recalculará con las cargas restantes. Esta acción no se puede deshacer.</string>
+    <string name="carga_eliminada">Carga eliminada.</string>
 </resources>
